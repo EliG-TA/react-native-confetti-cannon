@@ -103,7 +103,7 @@ class Explosion extends React.PureComponent<Props, State> {
   };
 
   getItems = (prevColors: Array<string>): Array<Item> => {
-    const { count, colors = DEFAULT_COLORS } = this.props;
+    const { count, colors = DEFAULT_COLORS } = this.props ?? {count: undefined, colors: [""]};
     const { items } = this.state;
 
     const difference = items.length < count ? count - items.length : 0;
